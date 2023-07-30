@@ -26,6 +26,6 @@ class ProjectsController < ApplicationController
   private
 
   def record_page_view
-    # ActiveAnalytics.record_request(request)
+    ActiveAnalytics.record_request(request)
   end
 end
