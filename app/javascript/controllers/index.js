@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import RadioSelectionController from "./radio_selection_controller"
+application.register("radio-selection", RadioSelectionController)
+
+import ResetFormController from "./reset_form_controller"
+application.register("reset-form", ResetFormController)

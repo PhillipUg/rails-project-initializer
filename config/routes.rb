@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  mount ActiveAnalytics::Engine, at: "analytics"  # http://localhost:3000/analytics
 
-  # Defines the root path route ("/")
-  root "rails/welcome#index"
+  resources :projects, only: [:new, :create] do
+    get :download, on: :collection
+  end
+  root 'projects#new'
 end

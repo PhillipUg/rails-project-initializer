@@ -1,4 +1,5 @@
 module.exports = {
+  theme: {},
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',

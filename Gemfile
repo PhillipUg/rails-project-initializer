@@ -66,3 +66,5 @@ end
 
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
+gem 'rubyzip', '~> 2.3'
+gem 'active_analytics'

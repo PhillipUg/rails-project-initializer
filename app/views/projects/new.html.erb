@@ -1,0 +1,41 @@
+<main class="h-screen w-full">
+  <div class="h-screen w-full pt-28">
+    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form' }, class: "w-[80%] mx-auto h-full overflow-y-scroll no-scrollbar px-2 pb-16" do %>
+      <div class="mb-6">
+        <div class="mb-6">
+          <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type" %>
+        </div>
+
+        <div class="mb-6">
+          <%= render 'radio_group', name: :rails_version, items: @supported_rails_versions, title: "Rails Version (Optional)" %>
+        </div>
+
+        <div class="mb-6">
+          <%= render 'radio_group', name: :ruby_version, items: @supported_ruby_versions, title: "Ruby Version (Optional)" %>
+        </div>
+
+        <div class="mb-6">
+          <%= render 'radio_group', name: :database, items: @supported_databases, title: "Database Type (Optional)" %>
+        </div>
+
+        <p class="text-xl text-gray-400 border-dashed border border-t-gray-300 p-6">CSS & JS Processor options coming soon...</p>
+
+<!--        <div class="mb-6">-->
+          <%#= render 'radio_group', name: :css, items: @supported_css_processors, title: "CSS Processor (Optional)" %>
+<!--        </div>-->
+
+<!--        <div class="mb-6">-->
+          <%#= render 'radio_group', name: :javascript, items: @supported_js_processors, title: "JavaScript Approach (Optional)" %>
+<!--        </div>-->
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center py-4 over">
+        <%= submit_tag "Generate", class: "bg-red-800 uppercase cursor-pointer ring-2 ring-inset ring-red-800 hover:bg-red-800 hover:text-white text-xl text-white font-semibold py-2 px-10 rounded-md transition-all ease-in-out duration-500 hover:animate-bounce hover:px-12 hover:py-4" %>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</main>
+
