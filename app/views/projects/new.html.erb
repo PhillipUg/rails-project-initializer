@@ -1,9 +1,17 @@
 <main class="h-screen w-full">
-  <div class="h-screen w-full pt-28">
-    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form' }, class: "w-[80%] mx-auto h-full overflow-y-scroll no-scrollbar px-2 pb-16" do %>
+  <div class="pt-28 w-[80%] mx-auto h-full overflow-y-scroll no-scrollbar">
+    <div class="flex flex-col items-center justify-center border-b border-b-gray-400 pb-4 border-dashed">
+      <h2 class="text-gray-600 text-2xl py-4">
+        <span class="font-extrabold text-2xl">Rails App Generator:</span> Jumpstart Your Development Journey
+      </h2>
+      <p class="text-xl text-gray-500 text-center w-[80%]">
+        Generate Rails applications without the command-line. This tool is a simplified interface to select the configurations you need in just a few clicks.
+      </p>
+    </div>
+    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form' }, class: "px-2 py-16" do %>
       <div class="mb-6">
         <div class="mb-6">
-          <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type" %>
+          <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type (Optional)" %>
         </div>
 
         <div class="mb-6">
@@ -30,12 +38,22 @@
       </div>
 
       <div class="absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center py-4 over">
-        <%= submit_tag "Generate", class: "bg-red-800 uppercase cursor-pointer ring-2 ring-inset ring-red-800 hover:bg-red-800 hover:text-white text-xl text-white font-semibold py-2 px-10 rounded-md transition-all ease-in-out duration-500 hover:animate-bounce hover:px-12 hover:py-4" %>
+        <%= submit_tag "Generate", class: "bg-red-800 uppercase cursor-pointer ring-2 ring-inset ring-red-800 hover:bg-red-800 hover:text-white text-xl text-white font-semibold py-2 px-10 rounded-md transition-all ease-in-out duration-500 hover:px-12 hover:py-4" %>
       </div>
-
+      <div>
+        <h3 class="text-2xl py-2 text-gray-600 font-extrabold">Quick Start Guide:</h3>
+        <div class="bg-gray-100 flex flex-col justify-center items-start p-8 rounded-md mb-2">
+          <p><code>cd</code> into your generated project's directory.</p>
+          <p>Run <code>bundle install</code> to install required gems.</p>
+          <p>Open <code>config/database.yml</code> and update the database configurations as needed.</p>
+          <p>Run the following commands to set up your database:</p>
+          <p><code>rails db:prepare</code></p>
+          <p><code>rails db:migrate</code></p>
+          <p>Start your server with <code>rails s</code>.</p>
+          <p>Open your browser and navigate to <code>http://localhost:3000</code> to see your new application in action!</p>
+        </div>
+      </div>
     <% end %>
-
-
   </div>
 </main>
 

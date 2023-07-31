@@ -39,9 +39,9 @@ class ProjectCreator
     major_rails_version = rails_version.split('.').first
 
     template_name = "#{major_rails_version}_#{app_type}"
-    source_app_path = "lib/templates/#{template_name}"
+    source_app_path = Rails.root.join("lib/templates/#{template_name}").to_s
 
-    @new_app_path = "tmp/apps/#{app_type}_#{rails_version}_#{ruby_version}_#{database_type}_#{SecureRandom.uuid}"
-    FileUtils.cp_r(source_app_path, new_app_path)
+    @new_app_path = Rails.root.join("storage/apps/#{app_type}_#{rails_version}_#{ruby_version}_#{database_type}_#{SecureRandom.uuid}").to_s
+    FileUtils.cp_r(source_app_path, @new_app_path)
   end
 end

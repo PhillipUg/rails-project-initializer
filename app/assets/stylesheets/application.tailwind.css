@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    code {
+        @apply label text-black bg-gray-300 rounded-md;
+    }
+}
+
 @layer utilities {
     .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -11,5 +17,9 @@
     .no-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+    }
+
+    .label {
+        @apply inline-flex items-center px-1.5 py-0.5 text-xs font-medium w-fit;
     }
 }

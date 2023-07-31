@@ -6,7 +6,7 @@ class RubyVersionUpdater
 
   def call
     write_content_to_file!(version,"#{app_path}/.ruby-version")
-    update_in_gemfile("#{app_path}/Gemfile", version)
+    update_in_gemfile(Rails.root.join("#{app_path}/Gemfile").to_s, version)
   end
 
   private

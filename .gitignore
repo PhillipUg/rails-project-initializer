@@ -17,12 +17,11 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-!/tmp/apps/
-!/tmp/apps/.keep
 
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
+!/storage/apps
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep

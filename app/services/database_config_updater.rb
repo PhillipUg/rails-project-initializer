@@ -5,7 +5,7 @@ class DatabaseConfigUpdater
   end
 
   def call
-    config_path = "#{app_path}/config/database.yml"
+    config_path = Rails.root.join("#{app_path}/config/database.yml").to_s
 
     case database
     when 'mysql'
@@ -26,7 +26,7 @@ class DatabaseConfigUpdater
   attr_reader :app_path, :database
 
   def update_in_gemfile(db_gem)
-    gemfile_path = "#{app_path}/Gemfile"
+    gemfile_path = Rails.root.join("#{app_path}/Gemfile").to_s
     lines = File.readlines(gemfile_path)
 
     updated_lines = lines.map do |line|

@@ -4,14 +4,20 @@
     <% items.each do |item| %>
       <!-- Active: "border-indigo-600 ring-2 ring-indigo-600", Not Active: "border-gray-300" -->
       <label data-action="click->radio-selection#toggle" data-radio-selection-target="option" class="relative flex cursor-pointer rounded-md bg-white p-2 focus:outline-none">
-        <%= radio_button_tag(name, item, false, class: "form-radio sr-only","data-action": "click->radio-selection#toggle", "data-radio-selection-target": "radio") %>
+        <%= radio_button_tag(name, item, false, class: "form-radio sr-only", "data-action": "click->radio-selection#toggle", "data-radio-selection-target": "radio") %>
         <span class="flex flex-1">
           <span class="flex flex-col">
             <% if name == :app_type %>
-              <span class="text-sm font-medium uppercase text-gray-900"><%= item.capitalize %></span>
+              <span class="text-sm font-bold uppercase text-gray-900"><%= item %></span>
+              <% if item == :standard %>
+                <span class="label bg-red-100 text-red-800 rounded-md">default</span>
+              <% end %>
               <span class="mt-1 flex items-center text-sm text-gray-500"><%= ::ProjectCreator::APP_TYPES[item] %></span>
             <% else %>
-              <span class="text-sm font-medium uppercase text-gray-900"><%= item.capitalize %></span>
+              <span class="text-sm font-bold uppercase text-gray-900"><%= item %></span>
+              <% if ['7.0', '3.2.2', 'sqlite'].include?(item)  %>
+                <span class="label bg-red-100 text-red-800 rounded-md">default</span>
+              <% end %>
             <% end %>
           </span>
         </span>
