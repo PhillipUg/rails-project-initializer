@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
       database: params[:database].presence || 'sqlite',
     ).call
 
-    send_file zip_file_path, type: 'application/zip'
+    send_file zip_file_path, type: 'application/zip', disposition: 'attachment', filename: 'project.zip'
   end
 
   private
