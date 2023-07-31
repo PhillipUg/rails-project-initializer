@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to the directory you want to clear
-DIR_PATH="storage/apps/"
+DIR_PATH="copied_apps/"
 
 # Make sure the path exists
 if [ -d "$DIR_PATH" ]; then

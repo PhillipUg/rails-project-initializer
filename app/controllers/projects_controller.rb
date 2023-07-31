@@ -16,8 +16,6 @@ class ProjectsController < ApplicationController
       rails_version: params[:rails_version].presence || '7.0',
       ruby_version: params[:ruby_version].presence || '3.2.2',
       database: params[:database].presence || 'sqlite',
-      # css: params[:css].presence || 'sass',
-      # js: params[:javascript].presence || 'webpack'
     ).call
 
     send_file zip_file_path, type: 'application/zip'

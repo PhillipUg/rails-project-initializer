@@ -5,10 +5,11 @@
         <span class="font-extrabold text-2xl">Rails App Generator:</span> Jumpstart Your Development Journey
       </h2>
       <p class="text-xl text-gray-500 text-center w-[80%]">
-        Generate Rails applications without the command-line. This tool is a simplified interface to select the configurations you need in just a few clicks.
+        Generate Rails applications without the command-line. This tool is a simplified interface to select the
+        configurations you need in just a few clicks.
       </p>
     </div>
-    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form' }, class: "px-2 py-16" do %>
+    <%= form_with url: projects_path, data: { turbo: false }, class: "px-2 py-16" do %>
       <div class="mb-6">
         <div class="mb-6">
           <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type (Optional)" %>
@@ -26,15 +27,8 @@
           <%= render 'radio_group', name: :database, items: @supported_databases, title: "Database Type (Optional)" %>
         </div>
 
-        <p class="text-xl text-gray-400 border-dashed border border-t-gray-300 p-6">CSS & JS Processor options coming soon...</p>
-
-<!--        <div class="mb-6">-->
-          <%#= render 'radio_group', name: :css, items: @supported_css_processors, title: "CSS Processor (Optional)" %>
-<!--        </div>-->
-
-<!--        <div class="mb-6">-->
-          <%#= render 'radio_group', name: :javascript, items: @supported_js_processors, title: "JavaScript Approach (Optional)" %>
-<!--        </div>-->
+        <p class="text-xl text-gray-400 border-dashed border border-t-gray-300 p-6">CSS & JS Processor options coming
+          soon...</p>
       </div>
 
       <div class="absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center py-4 over">
@@ -50,7 +44,8 @@
           <p><code>rails db:prepare</code></p>
           <p><code>rails db:migrate</code></p>
           <p>Start your server with <code>rails s</code>.</p>
-          <p>Open your browser and navigate to <code>http://localhost:3000</code> to see your new application in action!</p>
+          <p>Open your browser and navigate to <code>http://localhost:3000</code> to see your new application in action!
+          </p>
         </div>
       </div>
     <% end %>
