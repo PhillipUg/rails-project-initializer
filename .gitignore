@@ -20,8 +20,10 @@
 
 # Ignore uploaded files in development.
 /storage/*
+/storage/apps/*
 !/storage/.keep
 !/storage/apps
+!/storage/apps/.keep
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep

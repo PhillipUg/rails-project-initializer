@@ -52,8 +52,6 @@ class DatabaseConfigUpdater
         adapter: postgresql
         encoding: unicode
         pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-        username: postgres
-        password: postgres
 
       development:
         <<: *default
@@ -62,6 +60,12 @@ class DatabaseConfigUpdater
       test:
         <<: *default
         database: base_app_test
+      
+      production:
+        <<: *default
+        database: base_app_production
+        username: <%= ENV['BASE_APP_DATABASE_PASSWORD'] %>
+        password: <%= ENV['BASE_APP_DATABASE_PASSWORD'] %>
     CONFIG
   end
 
@@ -82,6 +86,12 @@ class DatabaseConfigUpdater
       test:
         <<: *default
         database: base_app_test
+
+      production:
+        <<: *default
+        database: base_app_production
+        username: <%= ENV['BASE_APP_DATABASE_PASSWORD'] %>
+        password: <%= ENV['BASE_APP_DATABASE_PASSWORD'] %>
     CONFIG
   end
 end
