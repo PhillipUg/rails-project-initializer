@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <excludedPredefinedLibrary name="rails-project-initializer/storage/apps/standard_6.1_3.1.4_mysql_adaed46c-50b5-4c0b-954a-a1876b549d21/node_modules" />
+    <excludedPredefinedLibrary name="rails-project-initializer/storage/apps/standard_6.1_3.1.4_mysql_b2812606-3ff5-4949-a61d-a04c06f8455e/node_modules" />
+    <excludedPredefinedLibrary name="rails-project-initializer/storage/apps/standard_6.1_3.1.4_postgresql_344370e1-7f66-4753-a9a4-5d635898ef6b/node_modules" />
+    <excludedPredefinedLibrary name="rails-project-initializer/storage/apps/standard_6.1_3.1.4_postgresql_494f4778-d876-4193-92fd-9646e7e78d9e/node_modules" />
+  </component>
+</project>
