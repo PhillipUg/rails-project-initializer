@@ -20,10 +20,7 @@
 
 # Ignore uploaded files in development.
 /storage/*
-/storage/apps/*
 !/storage/.keep
-!/storage/apps
-!/storage/apps/.keep
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
@@ -37,3 +34,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+/lib/templates/tmp_copies/*
+!/lib/templates/tmp_copies/.keep
