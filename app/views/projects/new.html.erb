@@ -2,14 +2,14 @@
   <div class="pt-28 w-[80%] mx-auto h-full overflow-y-scroll no-scrollbar">
     <div class="flex flex-col items-center justify-center border-b border-b-gray-400 pb-4 border-dashed">
       <h2 class="text-gray-600 text-2xl py-4">
-        <span class="font-extrabold text-2xl">Rails App Generator:</span> Jumpstart Your Development Journey
+        <span class="font-extrabold text-2xl text-center">Rails App Generator:</span> Jumpstart Your Development Journey
       </h2>
       <p class="text-xl text-gray-500 text-center w-[80%]">
         Generate Rails applications without the command-line. This tool is a simplified interface to select the
         configurations you need in just a few clicks.
       </p>
     </div>
-    <%= form_with url: projects_path, data: { turbo: false }, class: "px-2 py-16" do %>
+    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form', action: 'submit->reset-form#handleFormSubmit' }, class: "px-2 py-16" do %>
       <div class="mb-6">
         <div class="mb-6">
           <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type (Optional)" %>

@@ -40,4 +40,12 @@ export default class extends Controller {
             }
         })
     }
+
+    resetRadioSelection() {
+        this.radioTargets.forEach((radio, index) => {
+            radio.checked = false;
+            radio.dataset.checked = "false";
+            this.update();
+        });
+    }
 }
