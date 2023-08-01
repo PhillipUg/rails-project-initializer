@@ -2,7 +2,9 @@ module ApplicationHelper
   def default_meta_tags
     site = 'railsinit.org'
     title = 'Rails Initializer'
-    description = 'Generate Rails applications without the command-line. This tool is a simplified interface to select the configurations you need in just a few clicks. Get started with Rails easily and efficiently!'
+    description = 'Create a new Rails app from your browser! Select your configurations in just a few clicks, and launch your Rails journey with ease and speed. Get building now!'
+    image_height = 630
+    image_width = 1200
     {
       site: site,
       title: title,
@@ -12,6 +14,7 @@ module ApplicationHelper
       keywords: 'rails initializer, rails, ruby on rails, rails init, rails generator, rails app generator, rails initializr, ruby',
       canonical: request.original_url,
       noindex: !Rails.env.production?,
+      index: true,
       author: 'Phillip Musiime',
       icon: [
         { href: image_url('favicon.ico') },
@@ -23,14 +26,23 @@ module ApplicationHelper
         description: description,
         type: 'website',
         url: request.original_url,
-        image: image_url('logo.png')
+        image: {
+          _: image_url('logo.png'),
+          width: image_width,
+          height: image_height
+        }
       },
       twitter: {
-        card: 'summary',
+        card: 'summary_large_image',
         site: '@Phillip_Ug',
+        creator: '@Phillip_Ug',
         title: title,
         description: description,
-        image: image_url('logo.png')
+        image: {
+          _: image_url('logo.png'),
+          height: image_height,
+          width: image_width
+        }
       }
     }
   end
