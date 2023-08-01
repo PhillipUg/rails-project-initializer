@@ -9,7 +9,7 @@
         configurations you need in just a few clicks.
       </p>
     </div>
-    <%= form_with url: projects_path, data: { turbo: false, controller: 'reset-form', action: 'submit->reset-form#handleFormSubmit' }, class: "px-2 py-16" do %>
+    <%= form_with url: projects_path, data: { turbo: false, controller: 'submit-form', action: 'submit->submit-form#handleFormSubmit' }, class: "px-2 py-16" do %>
       <div class="mb-6">
         <div class="mb-6">
           <%= render 'radio_group', name: :app_type, items: @supported_app_types, title: "App Type (Optional)" %>

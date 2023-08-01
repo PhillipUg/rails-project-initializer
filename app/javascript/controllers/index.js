@@ -7,5 +7,5 @@ import { application } from "./application"
 import RadioSelectionController from "./radio_selection_controller"
 application.register("radio-selection", RadioSelectionController)
 
-import ResetFormController from "./reset_form_controller"
-application.register("reset-form", ResetFormController)
+import SubmitFormController from "./submit_form_controller"
+application.register("submit-form", SubmitFormController)

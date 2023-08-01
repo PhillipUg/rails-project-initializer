@@ -4,4 +4,8 @@
       <%= image_tag(image_path('logo.png')) %>
     </a>
   </div>
+
+  <div>
+    <p><span class="text-lg md:text-2xl text-gray-400">Downloads: </span> <span class="inline-block w-full text-center md:inline text-2xl text-red-900 font-extrabold"><%= Download.count %></span> </p>
+  </div>
 </header>

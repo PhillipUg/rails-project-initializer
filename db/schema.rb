@@ -10,22 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_090434) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_01_180455) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_analytics_views_per_days", force: :cascade do |t|
-    t.string "site", null: false
-    t.string "page", null: false
-    t.date "date", null: false
-    t.bigint "total", default: 1, null: false
-    t.string "referrer_host"
-    t.string "referrer_path"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["date"], name: "index_active_analytics_views_per_days_on_date"
-    t.index ["referrer_host", "referrer_path", "date"], name: "index_active_analytics_views_per_days_on_referrer_and_date"
-    t.index ["site", "page", "date"], name: "index_active_analytics_views_per_days_on_site_and_date"
+  create_table "downloads", force: :cascade do |t|
+    t.string "rails_version"
+    t.string "app_type"
+    t.string "ruby_version"
+    t.string "database"
+    t.integer "count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

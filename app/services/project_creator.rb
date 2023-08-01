@@ -28,6 +28,8 @@ class ProjectCreator
 
     ::DatabaseConfigUpdater.new(app_path: new_app_path, database: database_type).call
 
+    record_download!(app_type, rails_version, ruby_version, database_type)
+
     ::ZipGenerator.new(new_app_path).call
   end
 
@@ -43,5 +45,20 @@ class ProjectCreator
 
     @new_app_path = Rails.root.join("copied_apps/#{app_type}_#{rails_version}_#{ruby_version}_#{database_type}_#{SecureRandom.uuid}").to_s
     FileUtils.cp_r(source_app_path, @new_app_path)
+  end
+
+  def record_download!(app_type, rails_version, ruby_version, database)
+    attributes = {
+      rails_version: rails_version,
+      app_type: app_type,
+      ruby_version: ruby_version,
+      database: database
+    }
+
+    Download.transaction do
+      download = Download.lock.find_or_initialize_by(attributes)
+      download.count += 1
+      download.save!
+    end
   end
 end
