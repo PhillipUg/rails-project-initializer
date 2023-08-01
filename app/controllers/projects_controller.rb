@@ -1,6 +1,4 @@
 class ProjectsController < ApplicationController
-  before_action :record_page_view
-
   def new
     @supported_rails_versions = %w[7.0 6.1].freeze
     @supported_ruby_versions = %w[3.2.2 3.1.4 3.0.6 2.7.8].freeze
@@ -19,11 +17,5 @@ class ProjectsController < ApplicationController
     ).call
 
     send_file zip_file_path, type: 'application/zip', disposition: 'attachment', filename: 'project.zip'
-  end
-
-  private
-
-  def record_page_view
-    ActiveAnalytics.record_request(request)
   end
 end

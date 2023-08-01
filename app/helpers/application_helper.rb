@@ -28,8 +28,10 @@ module ApplicationHelper
         url: request.original_url,
         image: {
           _: image_url('logo.png'),
+          alt: 'rails initilaizer logo',
+          type: 'image/png',
           width: image_width,
-          height: image_height
+          height: image_height,
         }
       },
       twitter: {
