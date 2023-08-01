@@ -169,6 +169,8 @@ GEM
     reline (0.3.6)
       io-console (~> 0.5)
     rubyzip (2.3.2)
+    sitemap_generator (6.3.0)
+      builder (~> 3.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -208,6 +210,7 @@ DEPENDENCIES
   rails (~> 7.0.6)
   redis (~> 4.0)
   rubyzip (~> 2.3)
+  sitemap_generator
   stimulus-rails
   turbo-rails
   tzinfo-data
