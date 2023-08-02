@@ -1,4 +1,6 @@
 require_relative "boot"
+require_relative '../lib/www_redirect_middleware'
+
 
 require "rails"
 # Pick the frameworks you want:
@@ -33,5 +35,7 @@ module RailsProjectInitializer
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.middleware.insert_before 0, WwwRedirectMiddleware
   end
 end

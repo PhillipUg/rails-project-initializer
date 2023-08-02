@@ -1,6 +1,6 @@
 module ApplicationHelper
   def default_meta_tags
-    site = 'railsinit.org'
+    site = 'www.railsinit.org'
     title = 'Rails Initializer'
     description = 'Create a new Rails app from your browser! Select your configurations in just a few clicks, and launch your Rails journey with ease and speed. Get building now!'
     image_height = 630
@@ -12,7 +12,7 @@ module ApplicationHelper
       separator: '|',
       description: description,
       keywords: 'rails initializer, rails, ruby on rails, rails init, rails generator, rails app generator, rails initializr, ruby',
-      canonical: request.original_url,
+      canonical: site,
       noindex: !Rails.env.production?,
       index: true,
       author: 'Phillip Musiime',
