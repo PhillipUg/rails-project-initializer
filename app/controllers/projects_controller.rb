@@ -18,4 +18,9 @@ class ProjectsController < ApplicationController
 
     send_file zip_file_path, type: 'application/zip', disposition: 'attachment', filename: 'project.zip'
   end
+
+  def download_count
+    count = Download.total_count
+    render json: { count: count }
+  end
 end

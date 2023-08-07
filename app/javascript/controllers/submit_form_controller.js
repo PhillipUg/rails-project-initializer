@@ -28,6 +28,7 @@ export default class extends Controller {
           a.click();
           window.URL.revokeObjectURL(url);
 
+          this.updateDownloadCount();
           // Reset the form
           this.resetForm();
         })
@@ -36,6 +37,27 @@ export default class extends Controller {
           console.error('There was an error submitting the form:', error);
         });
   }
+
+    updateDownloadCount() {
+      console.log('reached here=====>')
+        // Fetch the updated download count from the backend
+        fetch("/projects/download_count", {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const downloadsElement = document.querySelector('#downloads');
+                console.log('elem: ', downloadsElement)
+                if (downloadsElement) {
+                    downloadsElement.innerHTML = data.count;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the updated download count:', error);
+            });
+    }
 
   resetForm() {
     this.element.reset(); // Reset the form itself

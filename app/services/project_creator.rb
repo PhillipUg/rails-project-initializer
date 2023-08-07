@@ -48,14 +48,14 @@ class ProjectCreator
   end
 
   def record_download!(app_type, rails_version, ruby_version, database)
-    download = Download.find_or_initialize_by(
+    prev_download_count = Download.last.count
+
+    Download.create!(
       rails_version: rails_version,
       app_type: app_type,
       ruby_version: ruby_version,
-      database: database
+      database: database,
+      count: prev_download_count += 1
     )
-
-    download.count += 1
-    download.save!
   end
 end
