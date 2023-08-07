@@ -48,17 +48,14 @@ class ProjectCreator
   end
 
   def record_download!(app_type, rails_version, ruby_version, database)
-    attributes = {
+    download = Download.find_or_initialize_by(
       rails_version: rails_version,
       app_type: app_type,
       ruby_version: ruby_version,
       database: database
-    }
+    )
 
-    Download.transaction do
-      download = Download.lock.find_or_initialize_by(attributes)
-      download.count += 1
-      download.save!
-    end
+    download.count += 1
+    download.save!
   end
 end
